@@ -12,8 +12,16 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list'
 import { MatCardModule } from '@angular/material/card';
 import { HomeComponent } from './components/view/home.component';
-import { CategoriaReadComponent } from './components/view/categoria/categoria-read/categoria-read.component';
 import { MatTableModule } from '@angular/material/table';
+import { HttpClientModule } from '@angular/common/http';
+import { CategoryRead } from './components/view/category/category-read/category-read.component'
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { CategoryCreateComponent } from './components/view/category/category-create/category-create.component';
+import { MatInputModule } from '@angular/material/input';
+import { FormsModule } from '@angular/forms';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+
 
 @NgModule({
   declarations: [
@@ -22,7 +30,9 @@ import { MatTableModule } from '@angular/material/table';
     FooterComponent,
     NavComponent,
     HomeComponent,
-    CategoriaReadComponent
+    CategoryRead,
+    CategoryCreateComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -32,7 +42,13 @@ import { MatTableModule } from '@angular/material/table';
     MatSidenavModule,
     MatListModule,
     MatCardModule,
-    MatTableModule
+    MatTableModule,
+    HttpClientModule,
+    MatButtonModule,
+    MatIconModule,
+    MatInputModule,
+    FormsModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

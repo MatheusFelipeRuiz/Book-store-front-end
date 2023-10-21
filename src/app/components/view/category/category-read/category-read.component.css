@@ -11,9 +11,35 @@
 }
 
 .title h1 {
-    font-size: 30px;
+    font-size: 2.5rem;
     text-transform: capitalize;
     font-weight: bold;
     color: rgb(173, 169, 169);
     font-family: 'Titillium Web', sans-serif;
+}
+
+.add-book {
+    color: green;
+}
+
+.add-book:hover {
+    background-color: rgba(255, 255, 255, 0.705);
+}
+
+.actions {
+    width: 5rem;
+}
+
+.books {
+    color: rgb(83, 0, 0);
+}
+
+.edit {
+    color: black;
+    font-size: 2rem;
+}
+
+.delete {
+    color: red;
+    font-size: 2rem;
 }
