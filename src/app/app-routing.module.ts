@@ -37,7 +37,7 @@ const routes: Routes = [
     component: BookReadComponent
   },
   {
-    path: 'livros/delete/:id',
+    path: 'livros/:id_category/delete/:id',
     component: BookDeleteComponent
   },
   {
