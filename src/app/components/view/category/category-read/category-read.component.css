@@ -20,10 +20,12 @@
 
 .add-category {
     color: green;
+    transition: all .5s ease-in-out;
 }
 
 .add-category:hover {
-    background-color: rgba(255, 255, 255, 0.705);
+    color:white;
+    background-color: rgba(255, 255, 255, 0.466);
 }
 
 .actions {
@@ -31,15 +33,31 @@
 }
 
 .books {
+    margin-left: 15px;
     color: rgb(83, 0, 0);
+    transition: all .5s ease-in-out;
+}
+
+.books:hover {
+    color: white;
 }
 
 .edit {
     color: black;
     font-size: 2rem;
+    transition: all .5s ease-in-out;
+}
+
+.edit:hover {
+    color: white;
 }
 
 .delete {
     color: red;
     font-size: 2rem;
+    transition: all .5s ease-in-out;
+}
+
+.delete:hover {
+    color: white;
 }

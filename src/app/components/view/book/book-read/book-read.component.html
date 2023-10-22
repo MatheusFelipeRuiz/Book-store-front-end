@@ -2,7 +2,7 @@
     <div class="title">
         <h1>Livros de {{category.name}}</h1>
     </div>
-    <button (click)="createBook()" mat-icon-button color="primary" class="add-book" aria-label="Add book button icon">
+    <button (click)="goToBookCreate()" mat-icon-button color="primary" class="add-book" aria-label="Add book button icon">
         <mat-icon>library_add</mat-icon>
     </button>
     <div class="mat-elevation-z8 content-table">
@@ -18,10 +18,10 @@
             </ng-container>
 
             <ng-container matColumnDef="livros">
-                <th mat-header-cell *matHeaderCellDef> Livros </th>
+                <th mat-header-cell *matHeaderCellDef> Visualizar </th>
                 <td mat-cell *matCellDef="let row">
                     <a routerLink="/livros">
-                        <i class="material-icons books">book</i>
+                        <i class="material-icons eye">remove_red_eye</i>
                     </a>
                 </td>
             </ng-container>

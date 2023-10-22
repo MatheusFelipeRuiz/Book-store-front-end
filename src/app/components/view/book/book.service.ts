@@ -19,6 +19,14 @@ export class BookService {
   ) { }
 
 
+  message(msg: string): void {
+    this.snack.open(`${msg}`, 'OK', {
+      horizontalPosition: 'center',
+      verticalPosition: 'bottom',
+      duration: 4000
+    })
+  }
+
   findAll(id: string): Observable<Book[]> {
     const url: string = `${this.baseUrl}/livros?categoria=${id}`;
     this.idCategory = id;
@@ -32,8 +40,12 @@ export class BookService {
 
   deleteBook(id: string): Observable<void> {
     const url: string = `${this.baseUrl}/livros/${id}`;
-    console.log(url);
     return this.http.delete<void>(url);
+  }
+
+  createBook(idCategory: string, book: Book): Observable<Book> {
+    const url: string = `${this.baseUrl}/livros?categoria=${idCategory}`;
+    return this.http.post<Book>(url, book);
   }
 
   cancel(): void {

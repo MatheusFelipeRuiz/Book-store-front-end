@@ -26,7 +26,9 @@ export class BookReadComponent {
     private bookService: BookService,
     private route: ActivatedRoute,
     private categoryService: CategoryService
-  ) { }
+  ) {
+    this.findAll();
+  }
 
   ngOnInit(): void {
     this.findAll();
@@ -45,7 +47,8 @@ export class BookReadComponent {
     })
   }
 
-  createBook(): void {
-
+  goToBookCreate(): void {
+    const id: string = String(this.route.snapshot.queryParamMap.get("categoria"));
+    this.router.navigate([`livros/${id}/create`]);
   }
 }
