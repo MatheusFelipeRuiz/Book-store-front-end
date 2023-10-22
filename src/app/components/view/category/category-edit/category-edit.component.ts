@@ -10,12 +10,16 @@ import { Category } from '../category.model';
 })
 export class CategoryEditComponent {
   category: Category = {
-    id:'',
+    id: '',
     name: '',
     description: ''
   }
   id: string = String(this.route.snapshot.paramMap.get("id"));
-  constructor(private router: Router, private categoryService: CategoryService, private route: ActivatedRoute) { }
+  constructor(
+    private router: Router,
+    private categoryService: CategoryService,
+    private route: ActivatedRoute
+  ) { }
 
   ngOnInit(): void {
     this.findById();
@@ -35,7 +39,13 @@ export class CategoryEditComponent {
   }
 
   edit(): void {
-    this.categoryService.edit(this.id, this.category);
+    this.categoryService.edit(this.category).subscribe((response) => {
+      this.categoryService.message("Categoria editada com sucesso!");
+      this.router.navigate(["categorias"]);
+    }, (err) => {
+      console.log(err);
+      this.categoryService.message("Campos não preenchidos");
+    });
   }
 
 }

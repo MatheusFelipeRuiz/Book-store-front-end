@@ -23,6 +23,8 @@ import { CategoryDeleteComponent } from './components/view/category/category-del
 import { CategoryRead } from './components/view/category/category-read/category-read.component';
 import { HomeComponent } from './components/view/home.component';
 import { CategoryEditComponent } from './components/view/category/category-edit/category-edit.component';
+import { BookReadComponent } from './components/view/book/book-read/book-read.component';
+import { BookDeleteComponent } from './components/view/book/book-delete/book-delete.component';
 
 
 @NgModule({
@@ -36,6 +38,8 @@ import { CategoryEditComponent } from './components/view/category/category-edit/
     CategoryCreateComponent,
     CategoryDeleteComponent,
     CategoryEditComponent,
+    BookReadComponent,
+    BookDeleteComponent,
 
   ],
   imports: [

@@ -24,7 +24,6 @@ export class CategoryRead implements OnInit {
       this.categorys = response;
     })
   }
-
   
   goToCategoryCreate(): void {
     this.router.navigate(["categorias/create"]);

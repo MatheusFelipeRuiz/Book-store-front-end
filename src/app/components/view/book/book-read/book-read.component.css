@@ -12,17 +12,16 @@
 
 .title h1 {
     font-size: 2.5rem;
-    text-transform: capitalize;
     font-weight: bold;
     color: rgb(173, 169, 169);
     font-family: 'Titillium Web', sans-serif;
 }
 
-.add-category {
+.add-book {
     color: green;
 }
 
-.add-category:hover {
+.add-book:hover {
     background-color: rgba(255, 255, 255, 0.705);
 }
 

@@ -9,7 +9,11 @@ import { Category } from '../category.model';
   styleUrls: ['./category-delete.component.css']
 })
 export class CategoryDeleteComponent {
-  constructor(private categoryService: CategoryService, private router: Router, private route: ActivatedRoute) {
+  constructor(
+    private categoryService: CategoryService, 
+    private router: Router, 
+    private route: ActivatedRoute
+  ) {
     this.getCategory();
   }
 
@@ -31,7 +35,7 @@ export class CategoryDeleteComponent {
     });
   }
 
-  getCategory() {
+  getCategory(): void {
     const id = String(this.route.snapshot.paramMap.get("id"));
     this.categoryService.findById(id).subscribe((category) => {
       this.category = category;
