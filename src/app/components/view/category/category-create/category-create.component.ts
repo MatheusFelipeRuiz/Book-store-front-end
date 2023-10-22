@@ -10,13 +10,13 @@ import { Category } from '../category.model';
 })
 export class CategoryCreateComponent {
   category: Category = {
-    name: "",
-    description: ""
+    name: " ", 
+    description: " "
   };
   constructor(private router: Router, private categoryService: CategoryService) { }
 
   cancel(): void {
-    this.router.navigate(["categorias"]);
+    this.categoryService.cancel();
   }
 
   create(): void {
@@ -26,7 +26,7 @@ export class CategoryCreateComponent {
       console.log(this.category.description);
       console.log(this.category.name);
       this.categoryService.message("Categoria cadastrado com sucesso!");
-      this.router.navigate(["categorias"]);  
+      this.router.navigate(["categorias"]);
     }, (err) => {
       for (let i = 0; i < err.error.errors.length; i++) {
         this.categoryService.message(err.error.errors[i].message);
