@@ -52,4 +52,9 @@ export class BookService {
     const queryParams = { categoria: this.idCategory }
     this.router.navigate(["livros"], { queryParams });
   }
+
+  edit(book: Book): Observable<Book> {
+    const url: string = `${this.baseUrl}/livros/${book.id}`;
+    return this.http.put<Book>(url, book);
+  }
 }
