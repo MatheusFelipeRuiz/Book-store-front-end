@@ -11,7 +11,7 @@ import { Book } from './book.model';
 })
 export class BookService {
   baseUrl: string = environment.apiUrl;
-
+  idCategory: string = '';
   constructor(
     private http: HttpClient,
     private snack: MatSnackBar,
@@ -21,10 +21,23 @@ export class BookService {
 
   findAll(id: string): Observable<Book[]> {
     const url: string = `${this.baseUrl}/livros?categoria=${id}`;
+    this.idCategory = id;
     return this.http.get<Book[]>(url);
   }
 
+  findById(id: string): Observable<Book> {
+    const url: string = `${this.baseUrl}/livros/${id}`;
+    return this.http.get<Book>(url);
+  }
+
+  deleteBook(id: string): Observable<void> {
+    const url: string = `${this.baseUrl}/livros/${id}`;
+    console.log(url);
+    return this.http.delete<void>(url);
+  }
+
   cancel(): void {
-    this.router.navigate(["livros"]);
+    const queryParams = { categoria: this.idCategory }
+    this.router.navigate(["livros"], { queryParams });
   }
 }

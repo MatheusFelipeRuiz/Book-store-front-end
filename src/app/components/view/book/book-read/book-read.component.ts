@@ -1,9 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-import { Book } from '../book.model';
+import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { BookService } from '../book.service';
 import { Category } from '../../category/category.model';
 import { CategoryService } from '../../category/category.service';
+import { Book } from '../book.model';
+import { BookService } from '../book.service';
 
 @Component({
   selector: 'app-book-read',

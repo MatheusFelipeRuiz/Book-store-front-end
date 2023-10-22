@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
-import { BookService } from '../book.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { CategoryService } from '../../category/category.service';
 import { Book } from '../book.model';
+import { BookService } from '../book.service';
+import { CategoryRead } from '../../category/category-read/category-read.component';
 
 @Component({
   selector: 'app-book-delete',
@@ -9,9 +11,12 @@ import { Book } from '../book.model';
   styleUrls: ['./book-delete.component.css']
 })
 export class BookDeleteComponent {
+  idCategory: string = '';
+
   book: Book = {
+    id: '',
     title: '',
-    description: ''
+    text: '',
   }
 
   constructor(
@@ -23,10 +28,29 @@ export class BookDeleteComponent {
   }
 
   getBook(): void {
-    const id: string = String(this.route.snapshot.queryParamMap.get("categoria"));
+    this.book.id = String(this.route.snapshot.paramMap.get("id"));
+    this.bookService.findById(this.book.id).subscribe((response) => {
+      this.book.id = response.id;
+      this.book.text = response.text;
+      this.book.title = response.title;
+      this.book.authorName = response.authorName;
+    });
+    console.log(this.book);
   }
+
+  deleteBook(): void {
+    const id: string = String(this.route.snapshot.paramMap.get("id"));
+    this.bookService.deleteBook(id).subscribe((response) => {
+      if (response == null) {
+        const queryParams = { categoria: this.idCategory }
+        this.router.navigate(["livros"], { queryParams });
+      }
+    }, (err) => {
+      console.log(err);
+    });
+  }
+
   cancel(): void {
     this.bookService.cancel();
-    this.router.navigate(["livros"]);
   }
 }
