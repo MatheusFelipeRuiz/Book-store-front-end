@@ -1,0 +1,48 @@
+form {
+    text-align: center;
+    width: 70%;
+    margin: 2rem auto 0 auto;
+}
+
+h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.buttons {
+    margin-bottom: 1rem;
+}
+
+.return {
+    width: 100%;
+    margin: 0;
+    background-color: black;
+    cursor: pointer;
+    transition: all .5s ease-in-out;
+}
+
+.return i {
+    color: white;
+    transition: all .5s ease-in-out;
+}
+
+.return:hover>i {
+    color: green;
+}
+
+.return:hover {
+    color: green;
+}
+
+
+textarea {
+    resize: none;
+}
+
+.form {
+    width: 100%;
+}
+
+button {
+    margin: auto 10px;
+}

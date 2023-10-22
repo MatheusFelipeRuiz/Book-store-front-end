@@ -9,6 +9,7 @@ import { BookReadComponent } from './components/view/book/book-read/book-read.co
 import { BookDeleteComponent } from './components/view/book/book-delete/book-delete.component';
 import { BookCreateComponent } from './components/view/book/book-create/book-create.component';
 import { BookEditComponent } from './components/view/book/book-edit/book-edit.component';
+import { BookReadTextComponent } from './components/view/book/book-read-text/book-read-text.component';
 
 const routes: Routes = [
   {
@@ -46,6 +47,10 @@ const routes: Routes = [
   {
     path: 'livros/:id/edit/:id_category',
     component: BookEditComponent
+  },
+  {
+    path: 'livros/:id/read/:id_category',
+    component: BookReadTextComponent
   }
 ];
 

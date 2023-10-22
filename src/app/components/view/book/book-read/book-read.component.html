@@ -21,7 +21,7 @@
             <ng-container matColumnDef="livros">
                 <th mat-header-cell *matHeaderCellDef> Visualizar </th>
                 <td mat-cell *matCellDef="let row">
-                    <a routerLink="/livros">
+                    <a routerLink="{{row.id}}/read/{{category.id}}">
                         <i class="material-icons eye">remove_red_eye</i>
                     </a>
                 </td>

@@ -1,0 +1,15 @@
+<form>
+    <h1>{{book.title}}</h1>
+    <mat-form-field class="form">
+        <input matInput [(ngModel)]="book.authorName" disabled type="text" name="authorName">
+    </mat-form-field>
+    <div class="buttons">
+        <button (click)="return()" mat-stroked-button class="return">
+            <i class="material-icons">keyboard_return</i>
+            Voltar
+        </button>
+    </div>
+    <mat-form-field class="form">
+        <textarea matInput [(ngModel)]="book.text" disabled name="text" cols="30" rows="15"></textarea>
+    </mat-form-field>
+</form>
